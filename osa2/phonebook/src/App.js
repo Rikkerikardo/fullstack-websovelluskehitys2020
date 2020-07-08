@@ -52,15 +52,21 @@ const App = () => {
           })
       }
     } else {
-      personService.create(noteObject).then((returnedNote) => {
-        setPersons(persons.concat(returnedNote))
-        setNewName("")
-        setNewNumber("")
-        setMessage(`Added ${returnedNote.name}`)
-        setTimeout(() => {
-          setMessage(null)
-        }, 5000)
-      })
+      personService
+        .create(noteObject)
+        .then((returnedNote) => {
+          setPersons(persons.concat(returnedNote))
+          setNewName("")
+          setNewNumber("")
+          setMessage(`Added ${returnedNote.name}`)
+          setTimeout(() => {
+            setMessage(null)
+          }, 5000)
+        })
+        .catch((error) => {
+          console.log(error.response.data)
+          setMessage(`${JSON.stringify(error.response.data)}`)
+        })
     }
   }
 
