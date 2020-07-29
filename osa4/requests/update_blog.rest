@@ -1,6 +1,9 @@
-PUT http://localhost:3001/api/blogs/5f0ea68692d4d32aa400921e
+PUT http://localhost:3001/api/blogs/5f0eee62b3f932331c81c1e0
 Content-Type: application/json
 
 {
-  "likes":"555"
-}
+  "title":"Changing likes",
+  "author": "Teemu testaaja",
+  "likes":"444",
+  "url":"www.testiurl.com"
+  }
