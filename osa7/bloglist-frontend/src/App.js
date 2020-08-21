@@ -58,7 +58,6 @@ const App = () => {
             users
           </Link>
         </div>
-
         <Switch>
           <React.Fragment>
             <h1>Blogs</h1>
